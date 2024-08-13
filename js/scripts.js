@@ -24,3 +24,27 @@ function sortTable(columnIndex) {
         table.tBodies[0].appendChild(row);
     }
 }
+document.addEventListener('DOMContentLoaded', () => {
+    const filterCountryInput = document.getElementById('filter-country');
+    const filterCompanyInput = document.getElementById('filter-company');
+    const tableRows = document.querySelectorAll('#emission-table tbody tr');
+
+    function filterTable() {
+        const countryFilter = filterCountryInput.value.toLowerCase();
+        const companyFilter = filterCompanyInput.value.toLowerCase();
+
+        tableRows.forEach(row => {
+            const country = row.cells[0].innerText.toLowerCase();
+            const company = row.cells[1].innerText.toLowerCase();
+
+            if (country.includes(countryFilter) && company.includes(companyFilter)) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    }
+
+    filterCountryInput.addEventListener('keyup', filterTable);
+    filterCompanyInput.addEventListener('keyup', filterTable);
+});
