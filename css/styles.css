@@ -84,3 +84,30 @@ footer a:hover {
     font-size: 16px;
     width: 200px;
 }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Schatten um die Tabelle */
+    border-radius: 5px; /* Abgerundete Ecken */
+    overflow: hidden; /* Verhindert, dass der Inhalt die abgerundeten Ecken überlappt */
+}
+
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd; /* Linie unter jeder Zelle */
+}
+
+th {
+    background-color: #4CAF50; /* Grüner Hintergrund für die Kopfzeilen */
+    color: white; /* Weißer Text für die Kopfzeilen */
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2; /* Leicht graue Hintergrundfarbe für jede zweite Zeile */
+}
+
+tr:hover {
+    background-color: #eaeaea; /* Hellere Hintergrundfarbe beim Überfahren */
+}
