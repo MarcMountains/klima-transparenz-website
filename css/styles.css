@@ -1,6 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
+    padding-bottom: 60px; /* Platz für den festen Footer am unteren Rand */
     padding: 0;
     line-height: 1.6;
 }
@@ -40,9 +41,10 @@ footer {
     color: white;
     text-align: center;
     padding: 10px 20px;
-    position: absolute;
+    position: fixed; /* Footer bleibt immer unten */
     bottom: 0;
     width: 100%;
+    z-index: 1000; /* Damit der Footer über anderen Inhalten liegt */
 }
 
 footer a {
