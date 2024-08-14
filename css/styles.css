@@ -239,3 +239,26 @@ form {
 .submit-button:hover {
     background-color: #004d40;
 }
+th {
+    cursor: pointer;
+    position: relative;
+    padding-right: 20px;
+}
+
+th::after {
+    content: '\25B2'; /* Pfeilsymbol für aufsteigende Sortierung */
+    position: absolute;
+    right: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+th[data-sort="asc"]::after {
+    content: '\25B2'; /* Pfeil nach oben für aufsteigende Sortierung */
+    opacity: 1;
+}
+
+th[data-sort="desc"]::after {
+    content: '\25BC'; /* Pfeil nach unten für absteigende Sortierung */
+    opacity: 1;
+}
