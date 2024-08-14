@@ -73,6 +73,7 @@ footer a:hover {
         position: relative;
     }
 }
+
 .filter-container {
     margin-bottom: 20px;
     display: flex;
@@ -179,6 +180,7 @@ tr:hover {
     color: #00796b;
     font-weight: bold;
 }
+
 .contact-section {
     padding: 50px 20px;
     text-align: center;
@@ -239,6 +241,8 @@ form {
 .submit-button:hover {
     background-color: #004d40;
 }
+
+/* Sortierbare Spaltenüberschriften mit Pfeilen */
 th {
     cursor: pointer;
     position: relative;
