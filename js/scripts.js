@@ -71,3 +71,30 @@ document.addEventListener('DOMContentLoaded', () => {
     filterCountryInput.addEventListener('keyup', filterTable);
     filterCompanyInput.addEventListener('keyup', filterTable);
 });
+
+// Sicherheitsmaßnahmen für das Kontaktformular
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('contact-form');
+    
+    if (form) {
+        form.addEventListener('submit', function(event) {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            // Simple input validation
+            if (!name || !email || !message) {
+                alert('Bitte füllen Sie alle Felder aus.');
+                event.preventDefault();
+                return;
+            }
+
+            // Basic XSS prevention
+            if (/[<>]/.test(name) || /[<>]/.test(email) || /[<>]/.test(message)) {
+                alert('Ungültige Eingabe erkannt. Bitte verwenden Sie keine unzulässigen Zeichen.');
+                event.preventDefault();
+                return;
+            }
+        });
+    }
+});
