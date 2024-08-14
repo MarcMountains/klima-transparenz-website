@@ -268,6 +268,7 @@ th[data-sort="desc"]::after {
     content: '\25BC'; /* Pfeil nach unten für absteigende Sortierung */
     opacity: 1;
 }
+
 .impressum-section {
     padding: 50px 20px;
     text-align: left;
@@ -290,4 +291,11 @@ th[data-sort="desc"]::after {
 .impressum-content p {
     margin-bottom: 15px;
     font-size: 1.2em;
+}
+
+/* Anpassungen für die CO2-Emissionen-Seite */
+.table-container {
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: left;
 }
