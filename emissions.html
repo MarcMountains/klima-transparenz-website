@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CO2-Emissionen</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="Klima Transparenz Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="emissions.html" class="active">CO2-Emissionen</a></li>
+                <li><a href="#about">Über uns</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="emissions">
+            <h2>CO2-Emissionen nach Land und Unternehmen</h2>
+            <div class="filter-container">
+                <input type="text" id="filter-country" placeholder="Nach Land filtern">
+                <input type="text" id="filter-company" placeholder="Nach Unternehmen filtern">
+            </div>
+            <table id="emission-table">
+                <thead>
+                    <tr>
+                        <th onclick="sortTable(0)">Land</th>
+                        <th onclick="sortTable(1)">Unternehmen</th>
+                        <th onclick="sortTable(2)">CO2-Emissionen (Mt)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Deutschland</td>
+                        <td>Unternehmen A</td>
+                        <td>100</td>
+                    </tr>
+                    <tr>
+                        <td>USA</td>
+                        <td>Unternehmen B</td>
+                        <td>200</td>
+                    </tr>
+                    <!-- Weitere fiktive Daten -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Klima Transparenz. Alle Rechte vorbehalten.</p>
+        <p><a href="#">Impressum</a> | <a href="#">Datenschutz</a> | <a href="#">Nutzungsbedingungen</a></p>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>
