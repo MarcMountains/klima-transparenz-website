@@ -24,6 +24,9 @@ function sortTable(columnIndex) {
     const thElements = table.querySelectorAll('th');
     thElements.forEach(th => th.removeAttribute('data-sort'));
 
+    // Setze die Sortierklasse auf die aktuelle Spalte
+    thElements[columnIndex].setAttribute('data-sort', sortDirection);
+
     rows.sort((a, b) => {
         let aText = a.cells[columnIndex].innerText.trim();
         let bText = b.cells[columnIndex].innerText.trim();
