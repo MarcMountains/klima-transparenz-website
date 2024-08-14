@@ -41,7 +41,7 @@ footer {
     color: white;
     text-align: center;
     padding: 10px 20px;
-    position: fixed; /* Footer bleibt immer unten */
+    position: static; /* Footer bleibt immer unten */
     bottom: 0;
     width: 100%;
     z-index: 1000; /* Damit der Footer über anderen Inhalten liegt */
