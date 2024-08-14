@@ -20,6 +20,10 @@ function sortTable(columnIndex) {
     let sortDirection = table.getAttribute('data-sort-direction') === 'asc' ? 'desc' : 'asc';
     table.setAttribute('data-sort-direction', sortDirection);
 
+    // Entferne alte Sortierklassen von allen th-Elementen
+    const thElements = table.querySelectorAll('th');
+    thElements.forEach(th => th.removeAttribute('data-sort'));
+
     rows.sort((a, b) => {
         let aText = a.cells[columnIndex].innerText.trim();
         let bText = b.cells[columnIndex].innerText.trim();
