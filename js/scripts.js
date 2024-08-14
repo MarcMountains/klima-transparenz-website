@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const userLang = navigator.language || navigator.userLanguage;
     const nav = document.querySelector('nav ul');
 
-    if (userLang.startsWith('ar') || userLang.startsWith('he')) { // Beispiel für arabische oder hebräische Sprache
+    if (userLang.startsWith('ar') || userLang.startsWith('he')) { 
         nav.style.direction = 'rtl';
         nav.style.justifyContent = 'flex-end';
     } else {
@@ -13,17 +13,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function sortTable(columnIndex) {
     const table = document.getElementById('emission-table');
-    const rows = Array.from(table.rows).slice(1);
-    const sortedRows = rows.sort((a, b) => {
-        const aText = a.cells[columnIndex].innerText;
-        const bText = b.cells[columnIndex].innerText;
-        return aText.localeCompare(bText, undefined, {numeric: true});
+    const tbody = table.tBodies[0];
+    const rows = Array.from(tbody.querySelectorAll('tr'));
+    const isNumericColumn = !isNaN(rows[0].cells[columnIndex].innerText.trim());
+
+    let sortDirection = table.getAttribute('data-sort-direction') === 'asc' ? 'desc' : 'asc';
+    table.setAttribute('data-sort-direction', sortDirection);
+
+    rows.sort((a, b) => {
+        let aText = a.cells[columnIndex].innerText.trim();
+        let bText = b.cells[columnIndex].innerText.trim();
+
+        if (isNumericColumn) {
+            aText = parseFloat(aText);
+            bText = parseFloat(bText);
+        }
+
+        if (sortDirection === 'asc') {
+            return aText > bText ? 1 : -1;
+        } else {
+            return aText < bText ? 1 : -1;
+        }
     });
 
-    for (const row of sortedRows) {
-        table.tBodies[0].appendChild(row);
-    }
+    tbody.innerHTML = '';
+    rows.forEach(row => tbody.appendChild(row));
 }
+
 document.addEventListener('DOMContentLoaded', () => {
     const filterCountryInput = document.getElementById('filter-country');
     const filterCompanyInput = document.getElementById('filter-company');
