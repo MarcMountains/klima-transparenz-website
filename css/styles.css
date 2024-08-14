@@ -266,3 +266,26 @@ th[data-sort="desc"]::after {
     content: '\25BC'; /* Pfeil nach unten für absteigende Sortierung */
     opacity: 1;
 }
+.impressum-section {
+    padding: 50px 20px;
+    text-align: left;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.impressum-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #00796b;
+}
+
+.impressum-content h3 {
+    margin-top: 20px;
+    font-size: 1.5em;
+    color: #00796b;
+}
+
+.impressum-content p {
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
